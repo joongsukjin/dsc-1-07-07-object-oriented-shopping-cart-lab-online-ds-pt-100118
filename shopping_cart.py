@@ -64,16 +64,20 @@ class ShoppingCart:
     	else:
     		return "Sorry, there is no discount to apply to your cart"
 
+    def get_attr(self, item, attr):
+    	return item[attr]
+
     def item_names(self):
     	names = [self.get_attr(item, "name") for item in self.items]
     	return names
 
     def void_last_item(self):
-    	if slef.items:
+    	if self.items:
     		removed_item = self.items.pop()
     	else:
     		return "There are no items in your cart"
     	self.total -= removed_item["price"]
+
 
 
 
